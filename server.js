@@ -4,7 +4,6 @@ const path = require('path');
 require('dotenv').config();
 
 const productRoutes = require('./routes/productRoutes');
-
 const authRoutes = require('./routes/authRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 
@@ -20,6 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes API
 app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/orders', orderRoutes);
 
 // Route de test rapide pour vérifier que l'API répond
 app.get('/api/status', (req, res) => {
